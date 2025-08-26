@@ -1,0 +1,114 @@
+% !TEX program = xelatex
+
+% ========================= 一般不动 =========================
+
+\documentclass[10.5pt, a4paper, twoside]{ctexbook}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    inner=2.5cm,
+    outer=2cm,
+    top=2cm,
+    bottom=2cm,
+    headheight=12.5pt
+}
+
+\usepackage{lmodern}
+
+\setCJKmainfont{Noto Serif SC Regular}
+\setCJKsansfont{Noto Sans SC Regular}
+\setCJKmonofont{Noto Sans SC Regular}
+
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\usepackage{microtype}
+\microtypecontext{spacing=nonfrench}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}[theorem]{示例}
+\newtheorem{remark}[theorem]{注记}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=cyan,
+}
+
+\usepackage{cleveref}
+\crefname{theorem}{定理}{定理}
+\crefname{definition}{定义}{定义}
+\crefname{lemma}{引理}{引理}
+\crefname{proposition}{命题}{命题}
+\crefname{corollary}{推论}{推论}
+\crefname{example}{示例}{示例}
+\crefname{remark}{注记}{注记}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\raggedleft\Huge\bfseries}
+  {第\zhnumber{\thechapter}章}
+  {0em}
+  {}
+\titleformat{\section}
+  {\raggedright\Large\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+% ========================= 一般必动 =========================
+% 此注释下的所有注释最终均应取消
+
+\usepackage[backend=biber, style=gb7714-2015]{biblatex}
+% \addbibresource{ref.bib}
+
+\usepackage{makeidx}
+% \makeindex
+
+\title{\huge\bfseries 你的标题}
+\author{你的名字}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+
+% \include{...}
+
+\backmatter
+
+% \printbibliography[title={参考文献}]
+
+% \printindex
+
+\end{document}
